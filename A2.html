@@ -120,27 +120,22 @@
     </div>
 
     <script>
-        // 获取评论表单元素
-        const commentForm = document.getElementById('add-comment-form');
+        // 获取评论表单元素const commentForm = document.getElementById('add-comment-form');
 
         // 处理提交评论的函数
         commentForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // 获取表单字段的值
-            const author = document.getElementById('author').value;
-            const commentText = document.getElementById('comment-text').value;
+            // 获取表单字段的值const author = document.getElementById('author').value;const commentText = document.getElementById('comment-text').value;
 
-            // 创建新评论元素
-            const newComment = document.createElement('div');
+            // 创建新评论元素const newComment = document.createElement('div');
             newComment.classList.add('comment');
             newComment.innerHTML = `
                 <p class="comment-author">${author}</p>
                 <p>${commentText}</p>
             `;
 
-            // 将新评论添加到评论区
-            const commentsContainer = document.querySelector('.comments-container');
+            // 将新评论添加到评论区const commentsContainer = document.querySelector('.comments-container');
             commentsContainer.insertBefore(newComment, commentForm);
 
             // 清空表单字段
