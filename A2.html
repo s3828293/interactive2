@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutorial</title>
+    <!-- please add a favicon -->
+    <link rel="stylesheet" href="style.css">
+    <script src="playerControls.js" defer></script>
+
+  </head>
+
+  <body>
+
+    <!-- this element holds all of the media player -->
+    <div class="video-player-wrapper">
+      <!-- this element holds the video element and the overlay -->
+      <div class="video-element-wrapper" style="text-align: center">
+
+        <video id="videoElement" controls style="width: 50%">
+          <source src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/berry-bunch_handheld-windmill-fan.mp4" type="video/mp4">
+        </video>
+        <p>Vedio↑</p>
+
+        <!-- <p>The two parts here and below are the video clips provided on the canvas, which I've left almost untouched</p> -->
+        
+        <p></p>
+<!--        <img id="videoPlayOverlay" src="./asset/icons/play.svg">-->
+
+      </div>
+      <!-- this element holds all of the custom controls -->
+      <div class="video-controls-wrapper" id="controlsWrapper">
+
+        <button class="video-control-button" id="playButton"></button>
+
+        <progress class="video-progress-bar" id="progressBar" value="0"></progress>
+        </div>
+    <style>
+        /* 评论容器的样式 */
+        .comments-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+
+        /* 单个评论的样式 */
+        .comment {
+            margin-bottom: 20px;
+            border: 1px solid #be3636;
+            padding: 10px;
+        }
+
+        /* 评论作者和内容的样式 */
+        .comment-author {
+            font-weight: bold;
+        }
+
+        <p></p>
+
+<!-- <p>The border color of the comment section is red, as opposed to the black and white tones of the page, so that the comments will be more noticeable</p> -->
+
+<p></p>
+       
+    </style>
+</head>
+<body>
+    <div class="comments-container">
+        <h2>Comments</h2>
+
+        <!-- 已有的评论 -->
+        <div class="comment">
+            <span>
+                <img src="./asset/Lakaka.jpeg" style="
+                margin: 0;
+    width: 10%;
+    height: 10%;
+    -o-object-fit: cover;
+    object-fit: cover;border-radius: 50%;">
+            <span class="comment-author">Romero Lakaka</span>
+            </span>
+            <p>Gotta spend more time to be with my son on this!</p>
+        </div>
+
+        <!-- 另一个评论示例 -->
+        <div class="comment">
+            <span>
+                <img src="./asset/Mesee.jpg" style="
+                margin: 0;
+    width: 10%;
+    height: 10%;
+    -o-object-fit: cover;
+    object-fit: cover;border-radius: 50%;">
+            <span class="comment-author">Lionel Mesee</span>
+            </span>
+            <p> I love the little windmills, now that I've learned to fold one out of paper!</p>
+        </div>
+
+        <p></p>
+
+        <!-- <p>Setting up a comment section is one interaction I came up with, and here's the title to indicate that it's a comment section,followed by examples of simple comments from users of two websites, along with their basic personal information and user avatars </p> -->
+        
+        <p></p>
+
+        <!-- 评论表单 -->
+        <div id="comment-form">
+            <h3>Say somthing</h3>
+            <form id="add-comment-form">
+                <div>
+                    <label for="author">Who r u：</label>
+                    <input type="text" id="author" required>
+                </div>
+                <div>
+                    <label for="comment-text">Comment：</label>
+                    <textarea id="comment-text" required></textarea>
+                </div>
+                <div>
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // 获取评论表单元素
+        const commentForm = document.getElementById('add-comment-form');
+
+        // 处理提交评论的函数
+        commentForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // 获取表单字段的值
+            const author = document.getElementById('author').value;
+            const commentText = document.getElementById('comment-text').value;
+
+            // 创建新评论元素
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `
+                <p class="comment-author">${author}</p>
+                <p>${commentText}</p>
+            `;
+
+            // 将新评论添加到评论区
+            const commentsContainer = document.querySelector('.comments-container');
+            commentsContainer.insertBefore(newComment, commentForm);
+
+            // 清空表单字段
+            document.getElementById('author').value = '';
+            document.getElementById('comment-text').value = '';
+        });
+
+        <p>\</p>
+
+<!-- <p>This is our own comment section, when we want to comment on this video, we just need to enter our name and content, so that we can realize the most basic interaction.If we think our comment section is small you can drag our mouse to make it bigger so we can see it more clearly!</p> -->
+
+<p></p>
+
+
+    </script>
+</body>
+</html>
